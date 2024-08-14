@@ -10,6 +10,7 @@ body {
     font-family: Arial, sans-serif;
     color: white;
     text-align: center;
+    position: relative; /* Ensure stars and meteors stay within the viewport */
 }
 
 .stars, .meteors {
@@ -26,14 +27,14 @@ body {
     right: 10%;
     width: 80px;
     height: 80px;
-    background-color: #f8f8ff;
+    background-color: #f8f8ff; /* Light color for the moon */
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8); /* Brighter glow around the moon */
 }
 
 .message {
-    font-family: 'Courier New', Courier, monospace; 
-    color: #32CD32; 
+    font-family: 'Courier New', Courier, monospace;
+    color: #32CD32;
     font-size: 24px;
     position: absolute;
     top: 35%;
@@ -52,8 +53,8 @@ body {
 }
 
 #message {
-    font-family: 'Courier New', Courier, monospace; 
-    color: #32CD32; 
+    font-family: 'Courier New', Courier, monospace;
+    color: #32CD32;
     font-size: 24px;
     opacity: 0;
     transition: opacity 1s;
@@ -68,11 +69,12 @@ body {
     display: none;
 }
 
-.star, .meteor {
+.star {
     position: absolute;
     background-color: white;
     border-radius: 50%;
     animation: twinkle 2s infinite;
+    opacity: 0.5;
 }
 
 .meteor {
@@ -84,7 +86,7 @@ body {
 
 @keyframes twinkle {
     0%, 100% {
-        opacity: 0;
+        opacity: 0.3;
     }
     50% {
         opacity: 1;
